@@ -1,5 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { composeMessage, getFormAdapter, httpAdapter, localAdapter } from "./index";
+import { BUSINESS_NAME } from "@/config/site";
 import type { ContactData } from "@/lib/validation";
 
 const data: ContactData = {
@@ -43,7 +44,7 @@ describe("adaptorul formularului", () => {
 
   it("compune mesajul pentru WhatsApp", () => {
     const text = composeMessage(data);
-    expect(text).toContain("Liniște Studio");
+    expect(text).toContain(BUSINESS_NAME);
     expect(text).toContain("Telefon: +40712345678");
     expect(text).not.toContain("E-mail");
   });

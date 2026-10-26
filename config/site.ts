@@ -2,7 +2,10 @@
  * Configurarea studioului: nume, date de contact, program, sărbători, politici.
  * Numele apare DOAR aici; restul site-ului îl citește din BUSINESS_NAME.
  */
-export const BUSINESS_NAME = "Liniște Studio";
+export const BUSINESS_NAME = "Respiro";
+
+/** Al doilea rând din logo, folosit când numele are un singur cuvânt. */
+export const LOGO_SUBTITLE = "Masaj & relaxare";
 
 /** Zilele săptămânii, în ordinea din calendarul românesc (luni = 1, duminică = 0, ca Date.getDay()). */
 export type Weekday = 0 | 1 | 2 | 3 | 4 | 5 | 6;
@@ -35,7 +38,7 @@ export const site = {
   phoneHref: "+40712345678",
   /** Număr pentru linkul WhatsApp (wa.me), fără „+” și fără spații. */
   whatsapp: "40712345678",
-  email: "programari@liniste-studio.ro",
+  email: "programari@respiro-masaj.ro",
   area: "România",
   address: {
     street: "Strada Teilor nr. 7, parter",

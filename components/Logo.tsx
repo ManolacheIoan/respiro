@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BUSINESS_NAME } from "@/config/site";
+import { BUSINESS_NAME, LOGO_SUBTITLE } from "@/config/site";
 
 /**
  * Semnul studioului: trei pietre echilibrate din care crește o frunză.
@@ -35,13 +35,14 @@ export function LogoMark({ size = 40, draw = false }: { size?: number; draw?: bo
 /** Logo complet (semn + nume), ca link spre pagina principală. */
 export function Logo({ draw = true }: { draw?: boolean }) {
   const [first, ...rest] = BUSINESS_NAME.split(" ");
+  const sub = rest.length ? rest.join(" ") : LOGO_SUBTITLE;
   return (
     <Link href="/" className="logo">
       <LogoMark draw={draw} />
       {/* Numele vizibil este și numele accesibil al linkului (WCAG 2.5.3). */}
       <span className="logo__text">
         <span className="logo__name">{first}</span>
-        {rest.length ? <span className="logo__sub"> {rest.join(" ")}</span> : null}
+        {sub ? <span className="logo__sub"> {sub}</span> : null}
         <span className="visually-hidden"> — pagina principală</span>
       </span>
     </Link>

@@ -1,6 +1,6 @@
-# Liniște Studio — site de prezentare pentru un studio de masaj
+# Respiro — site de prezentare pentru un studio de masaj
 
-> **Proiect demonstrativ (portofoliu).** „Liniște Studio” este o afacere **fictivă**. Echipa, adresa,
+> **Proiect demonstrativ (portofoliu).** „Respiro” este o afacere **fictivă**. Echipa, adresa,
 > numărul de telefon, e-mailul și prețurile sunt inventate. Formularul nu trimite nimic nicăieri până nu
 > conectezi un serviciu real (vezi mai jos). Site-ul are `noindex`, deci nu apare în motoarele de căutare.
 > Nota de demo există doar aici, în README; site-ul în sine arată ca un produs final.
@@ -111,10 +111,12 @@ Numele apare într-un singur loc:
 
 ```ts
 // config/site.ts
-export const BUSINESS_NAME = "Liniște Studio";
+export const BUSINESS_NAME = "Respiro";
+export const LOGO_SUBTITLE = "Masaj & relaxare";
 ```
 
-Logo-ul afișează primul cuvânt mare și restul ca subtitlu (ex.: „Liniște” + „STUDIO”). Mai verifică:
+Logo-ul afișează primul cuvânt mare și restul ca subtitlu (ex.: „Răgaz Studio” → „Răgaz” + „STUDIO”).
+Dacă numele are un singur cuvânt, al doilea rând este `LOGO_SUBTITLE` (lasă `""` ca să nu apară). Mai verifică:
 
 - `site.email` (adresa conține numele);
 - `name` din `package.json` (opțional);
