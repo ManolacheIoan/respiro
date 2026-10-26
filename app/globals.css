@@ -2541,6 +2541,7 @@ textarea {
 
 .field {
   display: grid;
+  align-content: start;
   gap: 0.35rem;
   margin: 0 0 1.25rem;
   border: 0;
@@ -2951,4 +2952,203 @@ fieldset:disabled .amount span {
   .breath__circle {
     transform: scale(0.85) !important;
   }
+}
+
+/* ==========================================================================
+   Programare: formular
+   ========================================================================== */
+
+.booking {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 1000px) {
+  .booking {
+    grid-template-columns: 1.6fr 1fr;
+    gap: 3rem;
+  }
+  .booking__aside {
+    position: sticky;
+    top: calc(var(--header-h) + 1.5rem);
+  }
+}
+
+.form-grid {
+  display: grid;
+  gap: 0 1.2rem;
+  margin-top: 1.4rem;
+}
+
+@media (min-width: 640px) {
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .field--full {
+    grid-column: 1 / -1;
+  }
+}
+
+.check {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.check input {
+  flex: none;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-top: 0.2rem;
+  accent-color: var(--sage);
+}
+
+.check input[aria-invalid="true"] {
+  outline: 2px solid var(--danger);
+  outline-offset: 2px;
+}
+
+.hp {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.contact-form {
+  position: relative;
+}
+
+.contact-form__submit {
+  margin-top: 0.4rem;
+  min-width: 220px;
+}
+
+.alert {
+  margin: 1.2rem 0 0;
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+}
+
+.alert:focus-visible {
+  outline: 2px solid var(--focus);
+}
+
+.alert--error {
+  border-color: rgb(156 59 43 / 0.5);
+  background: #fbefe9;
+  color: var(--ink);
+}
+
+.alert__title {
+  margin: 0 0 0.4rem;
+  font-weight: 700;
+  color: var(--danger);
+}
+
+.alert ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.alert p:last-child {
+  margin-bottom: 0;
+}
+
+.alert a {
+  color: var(--danger);
+}
+
+.done {
+  border-color: rgb(63 91 78 / 0.45);
+}
+
+.done h2:focus {
+  outline: none;
+}
+
+.done__badge {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  background: var(--sage);
+  color: var(--cream);
+}
+
+.done__badge .icon__accent {
+  stroke: #e8d7a8;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .done {
+    animation: vt-in 0.8s var(--ease) both;
+  }
+}
+
+.done__summary {
+  display: grid;
+  gap: 0.4rem;
+  margin: 1.4rem 0;
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius-sm);
+  background: var(--sand);
+}
+
+.done__summary div {
+  display: grid;
+  grid-template-columns: minmax(7rem, 30%) 1fr;
+  gap: 1rem;
+}
+
+.done__summary dt {
+  color: var(--muted);
+}
+
+.done__summary dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.btn-link {
+  margin-top: 1.2rem;
+  padding: 0.4rem 0;
+  background: none;
+  border: 0;
+  color: var(--sage);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+.direct-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.2rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.direct-list .btn {
+  width: 100%;
+  justify-content: flex-start;
+  overflow-wrap: anywhere;
+}
+
+.booking__hours {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--muted);
+}
+
+.booking__hours .icon {
+  color: var(--sage);
 }
