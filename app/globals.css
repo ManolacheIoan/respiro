@@ -3152,3 +3152,135 @@ fieldset:disabled .amount span {
 .booking__hours .icon {
   color: var(--sage);
 }
+
+/* ==========================================================================
+   Contact
+   ========================================================================== */
+
+.contact-grid {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 960px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+.contact-lines {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 1.4rem;
+  display: grid;
+  gap: 1.1rem;
+}
+
+.contact-lines li {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+}
+
+.contact-lines .icon {
+  margin-top: 0.2rem;
+  color: var(--sage);
+}
+
+.contact-lines__label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-ink);
+}
+
+.contact-lines a {
+  font-size: 1.15rem;
+  overflow-wrap: anywhere;
+}
+
+.contact-lines address {
+  font-style: normal;
+  font-size: 1.1rem;
+}
+
+.map-figure {
+  margin: 0 0 2rem;
+}
+
+.map-art {
+  width: 100%;
+  height: auto;
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+
+.map-figure figcaption {
+  margin-top: 0.6rem;
+}
+
+.map-art__bg {
+  fill: var(--cream);
+}
+
+.map-art__river {
+  stroke: #b9c6bd;
+  stroke-width: 18;
+  opacity: 0.8;
+}
+
+.map-art__streets {
+  stroke: #fffaf0;
+  stroke-width: 12;
+}
+
+.map-art__blocks rect {
+  fill: var(--cream-2);
+  stroke: var(--line);
+}
+
+.map-art__park rect {
+  fill: rgb(110 132 118 / 0.25);
+}
+
+.map-art__park path {
+  stroke: var(--sage);
+  stroke-width: 1.4;
+}
+
+.map-art__pin path {
+  fill: var(--terracotta);
+  stroke: var(--terracotta-ink);
+  stroke-width: 1.4;
+}
+
+.map-art__dot {
+  fill: var(--cream);
+}
+
+.map-art__pulse {
+  fill: rgb(184 105 63 / 0.18);
+}
+
+.map-art__label {
+  font-family: var(--font-display);
+  font-size: 16px;
+  fill: var(--gold-ink);
+}
+
+.map-art__north {
+  stroke: var(--gold-ink);
+  stroke-width: 1.4;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .map-art__pulse {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: glow 4s var(--ease-breath) infinite;
+  }
+}
