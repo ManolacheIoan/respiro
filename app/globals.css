@@ -2087,3 +2087,115 @@ textarea {
   justify-content: center;
   margin-top: 1.5rem;
 }
+
+/* ==========================================================================
+   Despre masaj (și liste reutilizate)
+   ========================================================================== */
+
+.info-card {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+
+.info-card h3 {
+  margin-bottom: 0.3rem;
+}
+
+.info-card p {
+  margin: 0;
+}
+
+.plain-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.for-item {
+  padding: 1.4rem 0 0;
+  border-top: 1px solid var(--gold);
+}
+
+.for-item h3 {
+  font-size: 1.45rem;
+}
+
+.split {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 960px) {
+  .split {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.contra-card h3 {
+  font-size: 1.35rem;
+}
+
+.dot-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.dot-list li {
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.dot-list li::before {
+  content: "";
+  position: absolute;
+  left: 0.2rem;
+  top: 0.68em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1px solid var(--terracotta-ink);
+}
+
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.check-list li {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.check-list .icon {
+  margin-top: 0.2rem;
+  color: var(--sage);
+}
+
+.section--sage .check-list .icon {
+  color: #e8d7a8;
+}
+
+.prep {
+  padding: 1.8rem;
+  border-radius: var(--radius);
+  border: 1px solid rgb(245 238 223 / 0.25);
+}
+
+.prep h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.prep h3 .icon {
+  color: var(--cream);
+}
