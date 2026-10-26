@@ -5,19 +5,28 @@ import { Leaves, ROUND_LEAF_D, type Placed } from "./shapes";
  * ferigă, ceașcă de ceai cu abur și lumânare. Grupurile .breathe „respiră”
  * lent (CSS), iar animațiile se opresc la prefers-reduced-motion.
  */
-const eucalyptus: Placed[] = [
-  { x: 118, y: 430, rot: -20, s: 1 },
-  { x: 96, y: 396, rot: 30, s: 1.1 },
-  { x: 120, y: 360, rot: -10, s: 1.15 },
-  { x: 108, y: 320, rot: 40, s: 1.2 },
-  { x: 140, y: 292, rot: -30, s: 1.1 },
-  { x: 140, y: 252, rot: 25, s: 1.15 },
-  { x: 176, y: 232, rot: -40, s: 1 },
-  { x: 176, y: 196, rot: 10, s: 1.05 },
-  { x: 208, y: 180, rot: -50, s: 0.9 },
-  { x: 208, y: 146, rot: 0, s: 0.85 },
-  { x: 228, y: 118, rot: -30, s: 0.7 },
-];
+/** Punct pe o curbă Bézier cubică, plus direcția tangentei (în grade). */
+function bezier(p: number[][], t: number) {
+  const m = 1 - t;
+  const x = m ** 3 * p[0][0] + 3 * m * m * t * p[1][0] + 3 * m * t * t * p[2][0] + t ** 3 * p[3][0];
+  const y = m ** 3 * p[0][1] + 3 * m * m * t * p[1][1] + 3 * m * t * t * p[2][1] + t ** 3 * p[3][1];
+  const dx = 3 * m * m * (p[1][0] - p[0][0]) + 6 * m * t * (p[2][0] - p[1][0]) + 3 * t * t * (p[3][0] - p[2][0]);
+  const dy = 3 * m * m * (p[1][1] - p[0][1]) + 6 * m * t * (p[2][1] - p[1][1]) + 3 * t * t * (p[3][1] - p[2][1]);
+  return { x, y, angle: (Math.atan2(dy, dx) * 180) / Math.PI };
+}
+
+// Tulpina de eucalipt (două segmente) și frunzele rotunde prinse de ea, alternativ stânga/dreapta.
+const STEM_A = [[80, 500], [70, 420], [84, 340], [134, 272]];
+const STEM_B = [[134, 272], [184, 204], [226, 160], [232, 104]];
+const round = (n: number) => Math.round(n * 10) / 10;
+const eucalyptus: Placed[] = [0.12, 0.27, 0.42, 0.57, 0.72, 0.87, 1.02, 1.17, 1.32, 1.47, 1.62, 1.8].map((u, i) => {
+  const { x, y, angle } = u <= 1 ? bezier(STEM_A, u) : bezier(STEM_B, Math.min(u - 1, 0.98));
+  const side = i % 2 ? 1 : -1;
+  const s = 1.15 - u * 0.25;
+  const off = 8 * s;
+  const rad = ((angle + 90 * side) * Math.PI) / 180;
+  return { x: round(x + Math.cos(rad) * off), y: round(y + Math.sin(rad) * off), rot: round(angle), s: round(s) };
+});
 
 const fern: Placed[] = Array.from({ length: 9 }, (_, i) => {
   const t = i / 8;
@@ -53,7 +62,7 @@ export function HeroArt({ className }: { className?: string }) {
 
       {/* Eucalipt */}
       <g className="breathe breathe--a">
-        <path className="ha-stem" d="M112 500C98 420 108 340 150 270S232 150 236 104" />
+        <path className="ha-stem" d="M80 500C70 420 84 340 134 272S226 160 232 104" />
         <Leaves className="ha-round-leaves" items={eucalyptus} d={ROUND_LEAF_D} />
       </g>
 

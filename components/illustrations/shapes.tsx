@@ -3,7 +3,7 @@
 /** Frunză îngustă, orizontală, cu baza în (0,0) și vârful la (30,0). */
 export const LEAF_D = "M0 0C6-9 20-11 30 0 20 11 6 9 0 0Z";
 /** Frunză rotundă de eucalipt, centrată în (0,0). */
-export const ROUND_LEAF_D = "M-11 0C-11-7-5-11 0-11S11-7 11 0 5 11 0 11-11 7-11 0Z";
+export const ROUND_LEAF_D = "M-10 0C-10-6.5-5-10 0-10S10-6.5 10 0 5 10 0 10-10 6.5-10 0Z";
 
 export interface Placed {
   x: number;

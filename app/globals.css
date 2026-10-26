@@ -1343,3 +1343,489 @@ textarea {
     animation: none !important;
   }
 }
+
+/* ==========================================================================
+   Pagina Acasă
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(2.5rem, 6vw, 5rem) clamp(3rem, 6vw, 5rem);
+}
+
+.hero__grid {
+  position: relative;
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .hero__grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 3rem;
+  }
+}
+
+.hero h1 {
+  max-width: 13ch;
+}
+
+.hero h1 em {
+  color: var(--sage);
+}
+
+.hero .lead {
+  margin-bottom: 1.8rem;
+}
+
+.hero__facts {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.8rem;
+  color: var(--muted);
+}
+
+.hero__facts li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero__facts .icon {
+  color: var(--sage);
+}
+
+.hero__art {
+  width: min(100%, 520px);
+  margin-inline: auto;
+  aspect-ratio: 480 / 520;
+}
+
+.hero-art {
+  width: 100%;
+  height: 100%;
+}
+
+/* Carduri de servicii */
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  height: 100%;
+}
+
+.service-card .icon-badge {
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  font-size: 1.55rem;
+  margin-bottom: 0.4rem;
+}
+
+.service-card__link {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+/* Tot cardul e clicabil, dar linkul rămâne singurul element focalizabil. */
+.service-card__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.service-card__link:hover {
+  color: var(--sage);
+}
+
+.service-card:has(.service-card__link:focus-visible) {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.service-card__link:focus-visible {
+  outline: none;
+}
+
+.service-card__meta {
+  margin: auto 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.price small:first-child {
+  margin: 0 0.15em 0 0;
+}
+
+.center-link {
+  text-align: center;
+  margin: 2.4rem 0 0;
+}
+
+/* Beneficii */
+
+.benefits {
+  overflow: hidden;
+}
+
+.benefits__sprig {
+  position: absolute;
+  right: 2%;
+  top: 2rem;
+  width: 200px;
+  height: auto;
+}
+
+.benefits .sprig__stem,
+.benefits .sprig__leaves {
+  stroke: #e8d7a8;
+  opacity: 0.25;
+}
+
+.benefit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem;
+}
+
+.benefit {
+  padding-top: 1.4rem;
+  border-top: 1px solid rgb(245 238 223 / 0.25);
+}
+
+.benefit .icon {
+  color: var(--cream);
+  margin-bottom: 1rem;
+}
+
+.benefit h3 {
+  font-size: 1.5rem;
+}
+
+.benefit p {
+  color: #e3dccd;
+  margin: 0;
+}
+
+/* Pași */
+
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1.5rem;
+  counter-reset: step;
+}
+
+@media (min-width: 760px) {
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1080px) {
+  .steps {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
+
+.step {
+  position: relative;
+  padding: 1.6rem 0 0;
+  border-top: 1px solid var(--line-strong);
+}
+
+.step::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--terracotta);
+}
+
+.step__num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--gold-ink);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.06em;
+}
+
+.step h3 {
+  font-size: 1.5rem;
+}
+
+/* Echipa, pe scurt */
+
+.team-teaser {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (min-width: 980px) {
+  .team-teaser {
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+}
+
+.team-teaser__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .team-teaser__list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.team-teaser__list .avatar {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 200 / 220;
+  margin-bottom: 0.8rem;
+}
+
+.team-teaser__name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.03em;
+}
+
+.team-teaser__list .small {
+  margin: 0;
+}
+
+/* Card cadou, pe scurt */
+
+.gift-teaser {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .gift-teaser {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.gift-teaser__art .voucher {
+  transform: rotate(-2.5deg);
+  transition: transform 1.2s var(--ease);
+}
+
+.gift-teaser__art .voucher:hover {
+  transform: rotate(0deg);
+}
+
+/* Cardul cadou (folosit și pe pagina Card cadou) */
+
+.voucher {
+  position: relative;
+  overflow: hidden;
+  container-type: inline-size;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 1.7;
+  margin-inline: auto;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 85% 15%, rgb(184 154 90 / 0.16), transparent 45%),
+    var(--cream);
+  background-image:
+    radial-gradient(circle at 85% 15%, rgb(184 154 90 / 0.16), transparent 45%),
+    var(--pattern-waves);
+  box-shadow: var(--shadow-lift);
+  color: var(--ink);
+}
+
+.voucher__frame {
+  position: absolute;
+  inset: 12px;
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.voucher__frame::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgb(184 154 90 / 0.4);
+  border-radius: 9px;
+}
+
+.voucher__sprig {
+  position: absolute;
+  left: -6px;
+  bottom: -10px;
+  width: 26%;
+  height: auto;
+}
+
+.voucher__sprig--2 {
+  left: auto;
+  right: -6px;
+  top: -20px;
+  bottom: auto;
+  width: 20%;
+}
+
+.voucher__body {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 7% 12%;
+  gap: 0.2rem;
+}
+
+.voucher__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--sage);
+  font-family: var(--font-display);
+  font-size: clamp(0.85rem, 4cqi, 1.3rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.voucher__brand .logo-mark {
+  width: clamp(26px, 8cqi, 44px);
+  height: auto;
+}
+
+.voucher__label {
+  margin: 0.4rem 0 0;
+  font-size: clamp(0.62rem, 2.6cqi, 0.85rem);
+  font-weight: 600;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold-ink);
+}
+
+.voucher__amount {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 13cqi, 4.4rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+  color: var(--sage-deep);
+}
+
+.voucher__hint {
+  margin: 0;
+  font-family: var(--font-italic);
+  font-style: italic;
+  font-size: clamp(0.95rem, 4cqi, 1.3rem);
+  color: var(--muted);
+}
+
+.voucher__note {
+  font-size: clamp(0.78rem, 3cqi, 1rem);
+  line-height: 1.4;
+}
+
+.voucher__note p {
+  margin: 0.15rem 0;
+  overflow-wrap: anywhere;
+}
+
+.voucher__note span {
+  color: var(--muted);
+  font-size: 0.85em;
+  letter-spacing: 0.05em;
+}
+
+.voucher__message {
+  font-family: var(--font-italic);
+  font-style: italic;
+  font-size: 1.2em;
+  color: var(--ink);
+}
+
+.voucher__meta {
+  margin: 0.4rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.2rem 1rem;
+  font-size: clamp(0.62rem, 2.3cqi, 0.8rem);
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+/* Bandă de contact */
+
+.contact-strip {
+  background: var(--sage-deep);
+  background-image: var(--pattern-waves);
+  color: var(--cream);
+  padding-block: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.contact-strip__inner {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+@media (min-width: 1000px) {
+  .contact-strip__inner {
+    grid-template-columns: 1fr auto;
+  }
+}
+
+.contact-strip h2 {
+  color: var(--cream);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 0.3rem;
+}
+
+.contact-strip p {
+  margin: 0;
+  color: #e3dccd;
+}
+
+.contact-strip .icon__accent {
+  stroke: #e8d7a8;
+}
+
+.contact-strip .btn--light .icon__accent {
+  stroke: var(--gold-ink);
+}
