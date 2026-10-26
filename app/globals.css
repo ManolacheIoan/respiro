@@ -3381,3 +3381,107 @@ fieldset:disabled .amount span {
   gap: 0.5rem;
   margin: 0 0 1rem;
 }
+
+/* ==========================================================================
+   404
+   ========================================================================== */
+
+.lost__inner {
+  text-align: center;
+}
+
+.lost__inner .lead {
+  margin-inline: auto;
+}
+
+.lost h1 {
+  max-width: 16ch;
+  margin-inline: auto;
+}
+
+.lost__art {
+  width: min(320px, 80%);
+  height: auto;
+  margin: 0 auto 1.5rem;
+}
+
+.lost__ripples ellipse {
+  stroke: var(--gold);
+  stroke-width: 1.2;
+}
+
+.lost__ripples ellipse:nth-child(2) {
+  opacity: 0.6;
+}
+
+.lost__ripples ellipse:nth-child(3) {
+  stroke: var(--sage);
+  opacity: 0.35;
+}
+
+.lost__leaf path {
+  stroke: var(--sage);
+  stroke-width: 1;
+  fill: rgb(110 132 118 / 0.22);
+}
+
+.lost__leaf .vein {
+  stroke: var(--gold);
+  fill: none;
+}
+
+@keyframes leaf-fall {
+  0% {
+    transform: translate(-40px, -30px) rotate(-25deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  45% {
+    transform: translate(30px, 50px) rotate(18deg);
+  }
+  70%,
+  100% {
+    transform: translate(-6px, 122px) rotate(-6deg);
+    opacity: 1;
+  }
+}
+
+@keyframes ripple {
+  0%,
+  68% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* Fără animație: frunza stă liniștită pe apă. */
+.lost__leaf {
+  transform: translate(-6px, 122px) rotate(-6deg);
+  transform-box: view-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lost__leaf {
+    animation: leaf-fall 9s var(--ease-breath) infinite;
+  }
+  .lost__ripples ellipse {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: ripple 9s ease-out infinite;
+  }
+  .lost__ripples ellipse:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  .lost__ripples ellipse:nth-child(3) {
+    animation-delay: 0.8s;
+  }
+}
