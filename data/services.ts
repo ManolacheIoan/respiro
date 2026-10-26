@@ -33,7 +33,7 @@ export const serviceGroups: { id: ServiceGroup; title: string; intro: string }[]
   {
     id: "relaxare",
     title: "Relaxare",
-    intro: "Ritm lent, presiune blândă și timp doar pentru tine.",
+    intro: "Ritm lent, presiune blândă, uleiuri aromatice și timp doar pentru tine.",
   },
   {
     id: "terapie",
@@ -43,7 +43,7 @@ export const serviceGroups: { id: ServiceGroup; title: string; intro: string }[]
   {
     id: "ritualuri",
     title: "Ritualuri și îngrijire",
-    intro: "Pietre calde, uleiuri aromatice, îngrijirea feței și momente în doi.",
+    intro: "Pietre calde, îngrijirea feței și momente liniștite în doi.",
   },
 ];
 
@@ -126,7 +126,7 @@ export const services: Service[] = [
   {
     id: "aromaterapie",
     name: "Masaj cu aromaterapie",
-    group: "ritualuri",
+    group: "relaxare",
     icon: "candle",
     short: "Uleiuri esențiale alese împreună, după starea ta.",
     description:

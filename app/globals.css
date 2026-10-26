@@ -1829,3 +1829,261 @@ textarea {
 .contact-strip .btn--light .icon__accent {
   stroke: var(--gold-ink);
 }
+
+/* ==========================================================================
+   Servicii și prețuri
+   ========================================================================== */
+
+.chip-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.8rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: rgb(245 238 223 / 0.6);
+  color: var(--sage-deep);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition:
+    background-color 0.5s var(--ease),
+    border-color 0.5s var(--ease);
+}
+
+.chip-nav a:hover {
+  background: var(--cream);
+  border-color: var(--sage);
+  color: var(--sage-deep);
+}
+
+.anchor {
+  position: absolute;
+  top: calc(-1 * var(--header-h) - 12px);
+}
+
+.service-list {
+  display: grid;
+  gap: clamp(1rem, 2.4vw, 1.6rem);
+}
+
+@media (min-width: 760px) {
+  .service-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .service-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.service-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-detail__head {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.service-detail h3 {
+  margin: 0 0 0.2rem;
+}
+
+.service-detail__intensity {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.intensity {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.intensity span {
+  width: 14px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--line-strong);
+}
+
+.intensity span[data-on="true"] {
+  background: var(--terracotta);
+}
+
+.service-detail__for {
+  margin: 0 0 0.4rem;
+}
+
+.price-table {
+  margin: 1.4rem 0 1rem;
+}
+
+.price-table th,
+.price-table td {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: baseline;
+}
+
+.price-table thead th {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-ink);
+  border-bottom-color: var(--line-strong);
+}
+
+.price-table tbody th {
+  font-weight: 500;
+}
+
+.price-table td,
+.price-table thead th:last-child {
+  text-align: right;
+}
+
+.price-table tbody tr {
+  transition: background-color 0.5s var(--ease);
+}
+
+.price-table tbody tr:hover {
+  background: rgb(184 154 90 / 0.08);
+}
+
+.price-table--wide th,
+.price-table--wide td {
+  padding-block: 0.9rem;
+}
+
+.service-detail__cta {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* Abonamente */
+
+.package-list {
+  align-items: stretch;
+}
+
+.package {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.8rem 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid rgb(245 238 223 / 0.25);
+  background: rgb(245 238 223 / 0.05);
+  transition:
+    background-color 0.7s var(--ease),
+    transform 0.7s var(--ease);
+}
+
+.package:hover {
+  background: rgb(245 238 223 / 0.09);
+  transform: translateY(-3px);
+}
+
+.package--highlight {
+  border-color: #e8d7a8;
+}
+
+.package__badge {
+  position: absolute;
+  top: -0.85rem;
+  left: 1.5rem;
+  margin: 0;
+  padding: 0.15rem 0.8rem;
+  border-radius: 999px;
+  background: #e8d7a8;
+  color: var(--sage-deep);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.package > .icon {
+  color: var(--cream);
+  margin-bottom: 1rem;
+}
+
+.package h3 {
+  font-size: 1.55rem;
+}
+
+.package__desc {
+  color: #e3dccd;
+}
+
+.package__includes {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.4rem;
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.97rem;
+}
+
+.package__includes li {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.package__includes .icon {
+  margin-top: 0.2rem;
+  color: #e8d7a8;
+}
+
+.package__price {
+  margin: auto 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgb(245 238 223 / 0.25);
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+}
+
+.package .price {
+  color: var(--cream);
+  font-size: 1.9rem;
+}
+
+.package__regular {
+  color: #e3dccd;
+}
+
+.package__validity {
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
+  color: #e3dccd;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.btn-row--center {
+  justify-content: center;
+  margin-top: 1.5rem;
+}
