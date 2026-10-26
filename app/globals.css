@@ -41,9 +41,11 @@
   --shadow: 0 1px 2px rgb(43 38 32 / 0.05), 0 14px 34px -18px rgb(63 91 78 / 0.35);
   --shadow-lift: 0 2px 4px rgb(43 38 32 / 0.05), 0 24px 46px -22px rgb(63 91 78 / 0.45);
 
-  --font-display: var(--font-display-latin), var(--font-display-ext), "Cormorant Garamond", Garamond, Georgia, serif;
-  --font-italic: var(--font-italic-latin), var(--font-italic-ext), var(--font-display-latin), Georgia, serif;
-  --font-text: var(--font-text-latin), var(--font-text-ext), "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* Fonturile de rezervă (cu metrici ajustate) stau la final, după fișierul latin-ext,
+     ca diacriticele să nu fie desenate cu fontul de rezervă după încărcare. */
+  --font-display: var(--font-display-latin), var(--font-display-ext), "Cormorant Fallback", Georgia, serif;
+  --font-italic: var(--font-italic-latin), var(--font-italic-ext), "Cormorant Italic Fallback", Georgia, serif;
+  --font-text: var(--font-text-latin), var(--font-text-ext), "Source Sans Fallback", system-ui, sans-serif;
 
   --radius: 22px;
   --radius-sm: 12px;
@@ -61,6 +63,38 @@
   --pattern-stones: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='200' fill='none' stroke='%232B2620' stroke-opacity='.06' stroke-width='1'><ellipse cx='50' cy='160' rx='34' ry='10'/><ellipse cx='48' cy='142' rx='22' ry='7'/><ellipse cx='50' cy='130' rx='12' ry='4.5'/><ellipse cx='190' cy='60' rx='26' ry='8'/><ellipse cx='194' cy='46' rx='14' ry='5'/><path d='M120 190c16-5 32 5 48 0' stroke='%23B89A5A' stroke-opacity='.2'/></svg>");
 
   color-scheme: light;
+}
+
+/* ——— Fonturi de rezervă cu aceleași dimensiuni ca fonturile web ———
+   Textul nu se mai rearanjează (fără salt de layout) când se încarcă fonturile.
+   Valorile vin din metricile fonturilor (lățime medie, ascendent, descendent). */
+
+@font-face {
+  font-family: "Source Sans Fallback";
+  src: local("Arial"), local("Helvetica"), local("Liberation Sans");
+  size-adjust: 93.76%;
+  ascent-override: 109.21%;
+  descent-override: 42.66%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Cormorant Fallback";
+  src: local("Times New Roman"), local("Times"), local("Liberation Serif");
+  size-adjust: 96.98%;
+  ascent-override: 95.27%;
+  descent-override: 29.59%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Cormorant Italic Fallback";
+  src: local("Times New Roman Italic"), local("Times-Italic"), local("Liberation Serif Italic");
+  font-style: italic;
+  size-adjust: 87.21%;
+  ascent-override: 105.95%;
+  descent-override: 32.91%;
+  line-gap-override: 0%;
 }
 
 /* ——— Bază ——— */
