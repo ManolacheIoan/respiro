@@ -36,11 +36,13 @@ export function LogoMark({ size = 40, draw = false }: { size?: number; draw?: bo
 export function Logo({ draw = true }: { draw?: boolean }) {
   const [first, ...rest] = BUSINESS_NAME.split(" ");
   return (
-    <Link href="/" className="logo" aria-label={`${BUSINESS_NAME} — pagina principală`}>
+    <Link href="/" className="logo">
       <LogoMark draw={draw} />
-      <span className="logo__text" aria-hidden="true">
+      {/* Numele vizibil este și numele accesibil al linkului (WCAG 2.5.3). */}
+      <span className="logo__text">
         <span className="logo__name">{first}</span>
-        {rest.length ? <span className="logo__sub">{rest.join(" ")}</span> : null}
+        {rest.length ? <span className="logo__sub"> {rest.join(" ")}</span> : null}
+        <span className="visually-hidden"> — pagina principală</span>
       </span>
     </Link>
   );
