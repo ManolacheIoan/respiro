@@ -1640,6 +1640,10 @@ textarea {
   }
 }
 
+.team-teaser__list > li {
+  text-align: center;
+}
+
 .team-teaser__list .avatar {
   width: 100%;
   height: auto;
