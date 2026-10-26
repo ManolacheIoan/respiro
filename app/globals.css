@@ -2775,3 +2775,180 @@ select.input {
     display: none;
   }
 }
+
+/* ==========================================================================
+   Relaxare: ghidul de respirație
+   ========================================================================== */
+
+.breath {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .breath {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.breath__stage {
+  position: relative;
+  width: min(100%, 420px);
+  aspect-ratio: 1;
+  margin-inline: auto;
+  display: grid;
+  place-items: center;
+}
+
+.breath__ring,
+.breath__circle {
+  position: absolute;
+  inset: 0;
+}
+
+.breath__ring svg {
+  width: 100%;
+  height: 100%;
+}
+
+.breath__guide {
+  stroke: var(--gold);
+  stroke-width: 0.6;
+  stroke-dasharray: 2 4;
+}
+
+.breath__guide--inner {
+  stroke: var(--sage);
+  opacity: 0.4;
+}
+
+.breath__circle {
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 30%, rgb(255 251 243 / 0.55), transparent 55%),
+    radial-gradient(circle, #6e8476 0%, var(--sage) 70%);
+  box-shadow:
+    0 0 0 10px rgb(63 91 78 / 0.08),
+    0 0 0 22px rgb(63 91 78 / 0.05),
+    0 30px 60px -30px rgb(47 74 62 / 0.6);
+  transform-origin: center;
+  transition-property: transform;
+  transition-timing-function: var(--ease-breath);
+  will-change: transform;
+}
+
+.breath__text {
+  position: relative;
+  text-align: center;
+  color: var(--cream);
+}
+
+.breath__phase {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  letter-spacing: 0.06em;
+}
+
+.breath__count {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  line-height: 1.2;
+  opacity: 0.85;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.breath__panel .btn-row {
+  margin-top: 0.5rem;
+}
+
+.choice-list {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 0.3rem;
+}
+
+.choice {
+  position: relative;
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line-strong);
+  background: #fffbf3;
+  cursor: pointer;
+  transition:
+    border-color 0.4s var(--ease),
+    background-color 0.4s var(--ease);
+}
+
+.choice:hover {
+  border-color: var(--sage);
+}
+
+.choice:has(input:checked) {
+  border-color: var(--sage);
+  background: var(--cream);
+  box-shadow: inset 3px 0 0 var(--sage);
+}
+
+.choice input {
+  margin-top: 0.35rem;
+  accent-color: var(--sage);
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.choice > span {
+  display: grid;
+}
+
+.choice__desc {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+fieldset:disabled .choice,
+fieldset:disabled .amount span {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.breath__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.5rem;
+  margin: 1.2rem 0 0;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.breath-note {
+  max-width: 44rem;
+  margin: 3rem auto 0;
+  text-align: center;
+}
+
+.tip .icon {
+  color: var(--sage);
+  margin-bottom: 0.8rem;
+}
+
+.tip h3 {
+  font-size: 1.45rem;
+}
+
+.tip p {
+  margin: 0;
+}
+
+/* Fără animație: cercul stă pe loc, fazele rămân ca text. */
+@media (prefers-reduced-motion: reduce) {
+  .breath__circle {
+    transform: scale(0.85) !important;
+  }
+}
