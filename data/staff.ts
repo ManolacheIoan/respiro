@@ -46,7 +46,7 @@ export const staff: StaffMember[] = [
     bio: "Fost atlet de semifond, înțelege oboseala de după antrenament. Lucrează cu alergători, sportivi amatori și cu oricine petrece multe ore în picioare.",
     quote: "Recuperarea face parte din antrenament.",
     languages: ["română", "engleză", "italiană"],
-    avatar: { hair: "barba", skin: "#D9A982", hairColor: "#2F2520", top: "#B8693F" },
+    avatar: { hair: "barba", skin: "#D9A982", hairColor: "#5A4030", top: "#B8693F" },
   },
   {
     id: "maria",

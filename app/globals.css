@@ -2199,3 +2199,154 @@ textarea {
 .prep h3 .icon {
   color: var(--cream);
 }
+
+/* ==========================================================================
+   Echipa
+   ========================================================================== */
+
+.team-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: clamp(1.2rem, 3vw, 2rem);
+}
+
+@media (min-width: 1000px) {
+  .team-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.person {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 560px) {
+  .person {
+    grid-template-columns: 180px 1fr;
+    align-items: start;
+  }
+}
+
+.person__portrait .avatar,
+.person__portrait img {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  aspect-ratio: 200 / 220;
+  border-radius: 999px 999px 18px 18px;
+  object-fit: cover;
+}
+
+.person__name {
+  font-size: 2rem;
+  margin-bottom: 0.1rem;
+}
+
+.person__role {
+  color: var(--terracotta-ink);
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.person__quote {
+  font-family: var(--font-italic);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--sage);
+  border-left: 1px solid var(--gold);
+  padding-left: 0.9rem;
+}
+
+.person__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 2rem;
+  margin: 0 0 1rem;
+}
+
+.person__facts dt {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-ink);
+}
+
+.person__facts dd {
+  margin: 0;
+}
+
+.person__spec-title {
+  font-family: var(--font-text);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-ink);
+  margin-bottom: 0.5rem;
+}
+
+.tag--link {
+  text-decoration: none;
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  transition:
+    background-color 0.5s var(--ease),
+    border-color 0.5s var(--ease);
+}
+
+.tag--link:hover {
+  background: rgb(63 91 78 / 0.08);
+  border-color: var(--sage);
+  color: var(--sage-deep);
+}
+
+.table-scroll {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: #fbf6ec;
+}
+
+.matrix {
+  min-width: 560px;
+}
+
+.matrix th,
+.matrix td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+}
+
+.matrix thead th {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.matrix tbody th {
+  text-align: left;
+  font-weight: 500;
+}
+
+.matrix tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.matrix td .icon {
+  display: inline-block;
+  color: var(--sage);
+}
+
+.matrix__no {
+  color: var(--muted);
+}
+
+.avatar__face .avatar__mouth-light {
+  stroke: #f3e2cf;
+}

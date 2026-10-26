@@ -43,7 +43,7 @@ export function Avatar({ style, className }: { style: AvatarStyle; className?: s
       {hair === "scurt" || hair === "barba" ? (
         <path style={hairFill} d="M70 106c-2-26 12-40 30-40s33 13 30 40c-5-11-13-18-30-20-15 1-25 8-30 20Z" />
       ) : null}
-      {hair === "barba" ? <path style={hairFill} d="M72 116c1 22 13 31 28 31s27-9 28-31c-6 8-15 11-28 11s-22-3-28-11Z" /> : null}
+      {hair === "barba" ? <path style={hairFill} d="M72 118c1 20 13 29 28 29s27-9 28-29c-4 4-9 6-14 6-3-3-8-4-14-4s-11 1-14 4c-5 0-10-2-14-6Z" /> : null}
       {hair === "lung" ? <path style={hairFill} d="M70 106c4-22 16-32 30-32s27 10 30 32c-9-10-19-15-30-15s-21 5-30 15Z" /> : null}
       {hair === "cret" ? (
         <g style={hairFill}>
@@ -66,7 +66,7 @@ export function Avatar({ style, className }: { style: AvatarStyle; className?: s
       <g className="avatar__face">
         <path d="M84 113q5 4 10 0M106 113q5 4 10 0" />
         <path d="M100 117v8" />
-        {hair === "barba" ? <path d="M93 132q7 3 14 0" /> : <path d="M93 131q7 5 14 0" />}
+        {hair === "barba" ? <path className="avatar__mouth-light" d="M94 133q6 3 12 0" /> : <path d="M93 131q7 5 14 0" />}
       </g>
       <path className="avatar__accent" d="M138 52c0-8 6-14 14-14 0 8-6 14-14 14Z" />
     </svg>
