@@ -1644,6 +1644,8 @@ textarea {
   width: 100%;
   height: auto;
   aspect-ratio: 200 / 220;
+  object-fit: cover;
+  border-radius: 999px 999px 18px 18px;
   margin-bottom: 0.8rem;
 }
 

@@ -154,7 +154,12 @@ export default function Home() {
           <ul className="team-teaser__list">
             {staff.map((p, i) => (
               <Reveal as="li" key={p.id} delay={i * 100}>
-                <Avatar style={p.avatar} />
+                {p.photo ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img className="avatar" src={p.photo} alt="" width={400} height={440} loading="lazy" />
+                ) : (
+                  <Avatar style={p.avatar} />
+                )}
                 <p className="team-teaser__name">{p.name}</p>
                 <p className="small muted">{p.role}</p>
               </Reveal>
