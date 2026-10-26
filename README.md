@@ -53,7 +53,7 @@ app/                     paginile (App Router), câte un folder pe pagină
   confidentialitate/     Politica de confidențialitate și cookie-uri
   not-found.tsx          Pagina 404
   globals.css            tot stilul (culori, texturi, componente, animații)
-  fonts/                 fonturile (woff2) + licențele OFL
+  fonts/                 fonturile (woff2: latin + diacritice „ro”) + licențele OFL
 config/site.ts           NUMELE afacerii, contact, program, sărbători, politica de anulare, meniu
 data/services.ts         servicii, durate, prețuri, abonamente, suplimente
 data/staff.ts            echipa
@@ -66,6 +66,7 @@ lib/form/                adaptorul formularului (local / HTTP)
 lib/breathing.ts         ritmurile ghidului de respirație
 tests/                   teste Playwright (formular, respirație, rețea, axe, navigare)
 scripts/serve.mjs        server static minimal pentru teste și Lighthouse
+scripts/subset-fonts.sh  regenerează fișierele mici cu diacritice
 ```
 
 ## Editarea conținutului
@@ -172,8 +173,10 @@ Formularul are și un câmp-capcană ascuns pentru roboți (`website`).
   pure sunt doar decorative; pentru text se folosesc variantele închise `#8E4B27` și `#6B5530`
   (rapoartele de contrast sunt notate la începutul `app/globals.css`).
 - Fonturi: Cormorant Garamond (titluri) și Source Sans 3 (text), găzduite local, licență SIL OFL
-  (`app/fonts/OFL-*.txt`). Fiecare are fișier „latin” și „latin-ext” pentru ă, â, î, ș, ț. Fonturile de
-  rezervă au metrici ajustate, ca textul să nu sară la încărcare.
+  (`app/fonts/OFL-*.txt`). Fiecare are un fișier „latin” și un fișier mic „ro” (~7 KB) doar cu
+  diacriticele (ă, ș, ț și câteva litere europene), generat cu `scripts/subset-fonts.sh` (necesită
+  `pip install fonttools brotli`) și preîncărcat. Fonturile de rezervă au metrici ajustate, ca textul să
+  nu sară la încărcare.
 - Texturi (granulație, frunze, valuri, pietre), logo, iconițe și ilustrații: SVG originale, în cod.
 - Animații lente: ilustrația din hero „respiră”, frunze în derivă, logo și separatoare desenate,
   apariție lină la derulare, tranziții între pagini, ghid de respirație, 404 cu o frunză care cade pe apă.

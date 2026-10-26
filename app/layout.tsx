@@ -8,7 +8,8 @@ import { BUSINESS_NAME, site } from "@/config/site";
 import "./globals.css";
 
 // Fonturi găzduite local: Cormorant Garamond (titluri) și Source Sans 3 (text).
-// Fiecare are fișier „latin” + „latin-ext” (pentru ă, â, î, ș, ț).
+// Fiecare are fișier „latin” + un fișier mic „ro” doar cu diacriticele (ă, ș, ț…),
+// generat cu scripts/subset-fonts.sh, preîncărcat ca textul să apară direct cu fontul corect.
 const display = localFont({
   src: "./fonts/cormorant-garamond-latin-wght-normal.woff2",
   weight: "300 700",
@@ -17,12 +18,11 @@ const display = localFont({
   adjustFontFallback: false,
 });
 const displayExt = localFont({
-  src: "./fonts/cormorant-garamond-latin-ext-wght-normal.woff2",
+  src: "./fonts/cormorant-garamond-ro-wght-normal.woff2",
   weight: "300 700",
   variable: "--font-display-ext",
   display: "swap",
   adjustFontFallback: false,
-  preload: false,
 });
 // Italicul (doar pentru accente) nu se preîncarcă.
 const italic = localFont({
@@ -35,7 +35,7 @@ const italic = localFont({
   preload: false,
 });
 const italicExt = localFont({
-  src: "./fonts/cormorant-garamond-latin-ext-wght-italic.woff2",
+  src: "./fonts/cormorant-garamond-ro-wght-italic.woff2",
   weight: "300 700",
   style: "italic",
   variable: "--font-italic-ext",
@@ -51,12 +51,11 @@ const text = localFont({
   adjustFontFallback: false,
 });
 const textExt = localFont({
-  src: "./fonts/source-sans-3-latin-ext-wght-normal.woff2",
+  src: "./fonts/source-sans-3-ro-wght-normal.woff2",
   weight: "200 900",
   variable: "--font-text-ext",
   display: "swap",
   adjustFontFallback: false,
-  preload: false,
 });
 
 export const metadata: Metadata = {
