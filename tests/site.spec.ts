@@ -107,3 +107,12 @@ test("fără salt de layout la încărcarea paginii principale", async ({ page }
   );
   expect(cls).toBeLessThan(0.02);
 });
+
+test("fără derulare orizontală pe ecrane înguste (320 px)", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 700 });
+  for (const path of [...pages, "/pagina-inexistenta/"]) {
+    await page.goto(path);
+    const width = await page.evaluate(() => document.documentElement.scrollWidth);
+    expect(width, path).toBeLessThanOrEqual(320);
+  }
+});

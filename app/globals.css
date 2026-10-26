@@ -2342,6 +2342,7 @@ textarea {
 }
 
 .table-scroll {
+  position: relative;
   overflow-x: auto;
   border-radius: var(--radius);
   border: 1px solid var(--line);
@@ -3518,4 +3519,15 @@ fieldset:disabled .amount span {
   .lost__ripples ellipse:nth-child(3) {
     animation-delay: 0.8s;
   }
+}
+
+/* Coloanele de grilă nu se lățesc după tabelele derulabile din interior. */
+.split > *,
+.contact-grid > *,
+.booking > *,
+.builder > *,
+.team-teaser > *,
+.gift-teaser > *,
+.hero__grid > * {
+  min-width: 0;
 }
