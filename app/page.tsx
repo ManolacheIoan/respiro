@@ -35,7 +35,6 @@ export default function Home() {
         <LeafDrift />
         <div className="container hero__grid">
           <div className="hero__copy">
-            <p className="eyebrow">Studio de masaj și relaxare</p>
             <h1>
               Un loc pentru <em>liniște</em>, atingere și respirație
             </h1>
