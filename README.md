@@ -7,6 +7,10 @@
 
 ![Pagina principală Respiro](docs/screenshot.webp)
 
+## English summary
+
+Portfolio project: a website for a fictional massage studio, with services and prices, a printable gift card, an animated breathing guide and a booking form. Built with Next.js and TypeScript, tested with Vitest, Playwright and axe (accessibility). The site itself is in Romanian.
+
 Site static (Next.js 16, export static) pentru un studio de masaj și relaxare: servicii și prețuri,
 informații despre masaj, echipă, program, card cadou tipăribil, ghid de respirație animat, formular de
 programare, contact, întrebări frecvente și politică de confidențialitate. Totul în limba română.
