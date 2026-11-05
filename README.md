@@ -5,6 +5,8 @@
 > conectezi un serviciu real (vezi mai jos). Site-ul are `noindex`, deci nu apare în motoarele de căutare.
 > Nota de demo există doar aici, în README; site-ul în sine arată ca un produs final.
 
+![Pagina principală Respiro](docs/screenshot.webp)
+
 Site static (Next.js 16, export static) pentru un studio de masaj și relaxare: servicii și prețuri,
 informații despre masaj, echipă, program, card cadou tipăribil, ghid de respirație animat, formular de
 programare, contact, întrebări frecvente și politică de confidențialitate. Totul în limba română.
