@@ -6,6 +6,7 @@ import { Header } from "@/components/Header";
 import { MobileCallBar } from "@/components/MobileCallBar";
 import { BUSINESS_NAME, site } from "@/config/site";
 import "./globals.css";
+import { withBase } from "@/lib/base-path";
 
 // Fonturi găzduite local: Cormorant Garamond (titluri) și Source Sans 3 (text).
 // Fiecare are fișier „latin” + un fișier mic „ro” doar cu diacriticele (ă, ș, ț…),
@@ -62,7 +63,7 @@ export const metadata: Metadata = {
   title: { default: `${BUSINESS_NAME} — ${site.tagline}`, template: `%s | ${BUSINESS_NAME}` },
   description: `${BUSINESS_NAME}: ${site.shortDescription}`,
   robots: { index: false, follow: false, nocache: true, googleBot: { index: false, follow: false } },
-  icons: { icon: "/icon.svg" },
+  icons: { icon: withBase("/icon.svg") },
 };
 
 export const viewport: Viewport = {
