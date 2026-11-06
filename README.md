@@ -5,6 +5,8 @@
 > conectezi un serviciu real (vezi mai jos). Site-ul are `noindex`, deci nu apare în motoarele de căutare.
 > Nota de demo există doar aici, în README; site-ul în sine arată ca un produs final.
 
+**Live:** [manolacheioan.github.io/respiro](https://manolacheioan.github.io/respiro/)
+
 ![Pagina principală Respiro](docs/screenshot.webp)
 
 ## English summary
